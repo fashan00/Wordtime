@@ -75,7 +75,8 @@ const { connectionString } = require('./lib/database')
 postgrator.setConfig({
   migrationDirectory: __dirname + '/postgrator',
   driver: 'pg',
-  connectionString
+  connectionString,
+  ssl: true,
 })
 
 postgrator.migrate('max', (err, migrations) => {
