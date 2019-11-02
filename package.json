@@ -1,12 +1,12 @@
 {
-  "name": "react-express-postgres-heroku",
+  "name": "wordtime",
   "version": "1.0.0",
   "engines": {
     "node": "8.x.x",
     "npm": "5.x.x"
   },
   "private": true,
-  "description": "Create React App with Express API and Postgres in Heroku",
+  "description": "Create React App with Koa API and Postgres in Heroku",
   "scripts": {
     "install:frontend": "cd frontend && npm install",
     "install:backend": "cd server && npm install",
@@ -17,7 +17,7 @@
     "heroku-postbuild": "cd frontend && npm run build",
     "start": "cd server && NODE_ENV=production node server.js"
   },
-  "author": "Ari Autio <ari.autio@iki.fi>",
+  "author": "Yishan Chen",
   "license": "MIT",
   "devDependencies": {
     "npm-run-all": "^4.1.5"
