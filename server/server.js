@@ -57,7 +57,7 @@ if (process.env.NODE_ENV === 'production') {
   console.log(`Production mode detected: Serving react-ui`)
   const path = require('path')
 
-  const buildDir = path.join(__dirname, '../react-ui/build')
+  const buildDir = path.join(__dirname, '../frontend/build')
 
   app.use(express.static(buildDir))
 
