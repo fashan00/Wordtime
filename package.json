@@ -11,6 +11,10 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^3.5.0"
-  }
-  
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules",
+    "server/node_modules"
+  ]
 }
