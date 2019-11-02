@@ -1,11 +1,14 @@
 {
   "name": "react-express-postgres-heroku",
   "version": "1.0.0",
-  
+  "engines": {
+    "node": "8.x.x",
+    "npm": "5.x.x"
+  },
   "private": true,
   "description": "Create React App with Express API and Postgres in Heroku",
   "scripts": {
-    "heroku-postbuild": "npm run --prefix react-ui build",
+    "heroku-postbuild": "cd react-ui && npm run build",
     "start": "cd server && NODE_ENV=production node server.js"
   },
   "author": "Ari Autio <ari.autio@iki.fi>",
