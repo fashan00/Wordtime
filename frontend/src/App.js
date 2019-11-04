@@ -1,39 +1,32 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import * as ApiHello from './Api/hello';
+import * as ApiPostgres from './Api/postgres';
 
 function App() {
   const [hello, setHello] = useState();
   const [postgres, setPostgres] = useState();
   const [error, setError] = useState();
 
-   useEffect(() => {
-    // Update the document title using the browser API
+  useEffect(() => {
     callAPI();
-  });
+  },[]);
 
-  function callAPI() {
-    fetch('/api/hello')
-      .then(res => res.json())
-      .then(data => {
-        setHello(data)
-      })
-
-    fetch('/api/postgres')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`/api/postgres HTTP status ${res.status}`)
-        }
-
-        return res
-      })
-      .then(res => res.json())
-      .then(data => {
-        setPostgres(data)
-      })
-      .catch(err => {
-        setError(err.toString())
-      })
+  async function callAPI() {
+    
+    try
+    {
+      var res = await ApiHello.getHello();
+      setHello(res.data)
+  
+      var res = await ApiPostgres.getPostgres();
+      setPostgres(res.data)
+  
+    }
+    catch(ex){
+      setError(ex)
+    }
   }
 
   return (
