@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import * as ApiHello from './api/hello';
-import * as ApiPostgres from './api/postgres';
+import * as ApiHello from './Api/hello'; 
+import * as ApiPostgres from './Api/postgres';
 
 function App() {
   const [hello, setHello] = useState();
