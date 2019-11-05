@@ -1,6 +1,8 @@
 const Koa = require('koa');
 const cors = require('@koa/cors');
 const Logger = require('koa-logger');
+const serve = require("koa-static");
+const mount = require("koa-mount");
 const ApiHello = require('./api/hello');
 const ApiPostgres = require('./api/postgres');
 
