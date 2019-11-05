@@ -7,7 +7,7 @@ router.get('/api/hello', async (ctx) => {
   });
 
 // Response by name to the GET requests, :name is URL fragment/argument
-router.get('/:name', async (ctx) => {
+router.get('/api/hello/:name', async (ctx) => {
   ctx.body = `Hello, ${ctx.params.name}!\n`;
 });
 
