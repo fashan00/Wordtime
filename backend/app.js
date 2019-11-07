@@ -2,6 +2,7 @@ const Koa = require('koa');
 const cors = require('@koa/cors');
 const Logger = require('koa-logger');
 const serve = require("koa-static");
+const mount = require('koa-mount');
 const ApiHello = require('./api/hello');
 const ApiPostgres = require('./api/postgres');
 const path = require('path')
@@ -17,8 +18,8 @@ if (process.env.NODE_ENV === 'production') {
     console.log(`Production mode detected: Serving React`);
 
     const buildDir = path.join(__dirname, '../frontend/build')
-    app.use(serve(buildDir));
-    
+    app.use(mount('/', serve(buildDir)));
+
     // app.get('*', (req, res) => {
     //   res.sendFile(path.join(buildDir, 'index.html'))
     // })
