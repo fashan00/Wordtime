@@ -18,11 +18,8 @@ if (process.env.NODE_ENV === 'production') {
     console.log(`Production mode detected: Serving React`);
 
     const buildDir = path.join(__dirname, '../frontend/build')
-    app.use(mount('/', serve(buildDir)));
-
-    // app.get('*', (req, res) => {
-    //   res.sendFile(path.join(buildDir, 'index.html'))
-    // })
+    // app.use(mount('/', serve(buildDir)));
+    app.use(serve(buildDir));
 }
 
 
